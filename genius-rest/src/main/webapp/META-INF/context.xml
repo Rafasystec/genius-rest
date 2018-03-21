@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true" >
+		 <ResourceLink name="jdbc/transferr"
+	 				global="jdbc/transferr"
+	 				auth="Container"
+	 				type="javax.sql.DataSource" />
+</Context>
