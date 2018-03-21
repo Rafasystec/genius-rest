@@ -1,6 +1,6 @@
-package br.com.transferr.rest.util;
+package br.com.barcadero.genius.rest.util;
 
-import br.com.transferr.core.enums.EnumFailSystem;
+import br.com.barcadero.genius.core.enums.EnumFailSystem;
 
 public class MapErroRetornoRest {
 	

@@ -1,10 +1,10 @@
-package br.com.transferr.rest.util;
+package br.com.barcadero.genius.rest.util;
 
 import javax.ws.rs.core.Response;
 
-import br.com.transferr.core.enums.EnumFailSystem;
-import br.com.transferr.core.exceptions.ValidationException;
-import br.com.transferr.core.responses.ResponseOK;
+import br.com.barcadero.genius.core.enums.EnumFailSystem;
+import br.com.barcadero.genius.core.exceptions.ValidationException;
+import br.com.barcadero.genius.core.responses.ResponseOK;
 
 
 

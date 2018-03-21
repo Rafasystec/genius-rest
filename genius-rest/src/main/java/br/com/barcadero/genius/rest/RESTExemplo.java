@@ -1,4 +1,4 @@
-package br.com.transferr.rest;
+package br.com.barcadero.genius.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -13,10 +13,10 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.transferr.core.exceptions.ValidationException;
-import br.com.transferr.core.model.Exemplo;
-import br.com.transferr.core.role.RoleExemplo;
-import br.com.transferr.rest.util.RestUtil;
+import br.com.barcadero.genius.core.exceptions.ValidationException;
+import br.com.barcadero.genius.core.model.Exemplo;
+import br.com.barcadero.genius.core.role.RoleExemplo;
+import br.com.barcadero.genius.rest.util.RestUtil;
 
 
 

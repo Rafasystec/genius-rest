@@ -1,4 +1,4 @@
-package br.com.transferr.rest;
+package br.com.barcadero.genius.rest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response.Status;
 
 import org.springframework.context.ApplicationContext;
 
-import br.com.transferr.core.model.Entidade;
+import br.com.barcadero.genius.core.model.Entidade;
 
 
 

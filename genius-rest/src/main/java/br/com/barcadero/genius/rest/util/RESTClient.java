@@ -1,4 +1,4 @@
-package br.com.transferr.rest.util;
+package br.com.barcadero.genius.rest.util;
 
 //import javax.ws.rs.client.Entity;
 //import javax.ws.rs.core.MediaType;
