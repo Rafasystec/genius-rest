@@ -3,7 +3,7 @@ package br.com.barcadero.genius.rest;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
-import br.com.barcadero.genius.core.model.Entidade;
+import br.com.barcadero.genius.persistence.model.Entidade;
 
 public interface RESTInterface <T extends Entidade> {
 	

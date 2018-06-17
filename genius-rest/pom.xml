@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>transferr-rest</groupId>
-	<artifactId>transferr-rest</artifactId>
+	<groupId>br.com.barcadero</groupId>
+	<artifactId>genius7-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>transferr-rest</name>
+	<name>genius7-rest</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -18,9 +18,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>transferr</groupId>
-			<artifactId>transfer</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>br.com.barcadero</groupId>
+  			<artifactId>genius-core</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>

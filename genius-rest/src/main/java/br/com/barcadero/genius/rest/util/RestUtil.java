@@ -2,9 +2,9 @@ package br.com.barcadero.genius.rest.util;
 
 import javax.ws.rs.core.Response;
 
-import br.com.barcadero.genius.core.enums.EnumFailSystem;
 import br.com.barcadero.genius.core.exceptions.ValidationException;
 import br.com.barcadero.genius.core.responses.ResponseOK;
+import br.com.barcadero.genius.persistence.enums.EnumFailSystem;
 
 
 
@@ -32,6 +32,7 @@ public class RestUtil {
 	
 	
 	public static Response getResponseErroInesperado(Throwable ex){
+		ex.printStackTrace();
 		return getResponseErroInesperado(ex.getMessage()); 
 	}
 	

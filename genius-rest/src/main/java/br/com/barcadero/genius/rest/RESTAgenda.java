@@ -1,5 +1,7 @@
 package br.com.barcadero.genius.rest;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,20 +16,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.barcadero.genius.core.exceptions.ValidationException;
-import br.com.barcadero.genius.core.role.RoleExemplo;
-import br.com.barcadero.genius.persistence.model.Exemplo;
+import br.com.barcadero.genius.core.role.RoleAgenda;
+import br.com.barcadero.genius.persistence.model.Agenda;
 import br.com.barcadero.genius.rest.util.RestUtil;
 
 
 
 
 @Component
-@Path("/exemplo")
-public class RESTExemplo extends ASuperRestClass<Exemplo>{
+@Path("agenda")
+public class RESTAgenda extends ASuperRestClass<Agenda>{
 	@Autowired
-	private RoleExemplo roleExemplo;
+	private RoleAgenda roleAgenda;
 	
-	public RESTExemplo() {
+	public RESTAgenda() {
 		
 	}
 	/**
@@ -51,9 +53,9 @@ public class RESTExemplo extends ASuperRestClass<Exemplo>{
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response doGet(@PathParam("id") long id){
-		Exemplo entidade=null;
+		Agenda entidade=null;
 		try {
-			entidade= roleExemplo.find(id);
+			entidade= roleAgenda.find(id);
 		} catch (ValidationException e) {
 			return RestUtil.getResponseValidationErro(e);
 		} catch (Exception e) {
@@ -71,10 +73,10 @@ public class RESTExemplo extends ASuperRestClass<Exemplo>{
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response save(Exemplo exemplo){
+	public Response save(Agenda exemplo){
 		if(exemplo.getId()>0){
 			try {
-				roleExemplo.update(exemplo);
+				roleAgenda.update(exemplo);
 			} catch (ValidationException e) {
 				return RestUtil.getResponseValidationErro(e);
 			}catch (Exception e) {
@@ -82,7 +84,7 @@ public class RESTExemplo extends ASuperRestClass<Exemplo>{
 			}
 		}else{
 			try {
-				roleExemplo.insert(exemplo);
+				roleAgenda.insert(exemplo);
 			} catch (ValidationException e) {
 				return RestUtil.getResponseValidationErro(e);
 			}catch (Exception e) {
@@ -104,7 +106,7 @@ public class RESTExemplo extends ASuperRestClass<Exemplo>{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response delete(@PathParam("id") long id){
 		try {
-			roleExemplo.delete(id);
+			roleAgenda.delete(id);
 		} catch (ValidationException e) {
 			return RestUtil.getResponseValidationErro(e);
 		}catch (Exception e) {
@@ -113,6 +115,19 @@ public class RESTExemplo extends ASuperRestClass<Exemplo>{
 		return Response.ok().build();
 	}
 	
+	@GET
+	@Path("client/{idClient}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response doGetListClientAgenda(@PathParam("idClient") long id){
+		List<Agenda> entidade=null;
+		try {
+			entidade= roleAgenda.listAllClientAgenda(id);
+		} catch (Exception e) {
+			return RestUtil.getResponseErroInesperado(e);
+		}
+
+		return Response.ok().entity(entidade).build();
+	}
 
 
 }

@@ -7,7 +7,7 @@ import javax.ws.rs.core.Response.Status;
 
 import org.springframework.context.ApplicationContext;
 
-import br.com.barcadero.genius.core.model.Entidade;
+import br.com.barcadero.genius.persistence.model.Entidade;
 
 
 

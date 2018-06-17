@@ -13,10 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.barcadero.genius.core.exceptions.ValidationException;
-import br.com.barcadero.genius.core.model.Credentials;
-import br.com.barcadero.genius.core.model.User;
 import br.com.barcadero.genius.core.responses.ResponseLogin;
 import br.com.barcadero.genius.core.role.RoleUser;
+import br.com.barcadero.genius.persistence.model.User;
+import br.com.barcadero.genius.persistence.objects.Credentials;
 import br.com.barcadero.genius.rest.util.RestUtil;
 
 @Component
