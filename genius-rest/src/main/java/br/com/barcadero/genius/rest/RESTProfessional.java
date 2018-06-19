@@ -1,5 +1,7 @@
 package br.com.barcadero.genius.rest;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -13,10 +15,14 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.barcadero.genius.core.exceptions.ValidationException;
+//import br.com.barcadero.genius.core.exceptions.ValidationException;
 import br.com.barcadero.genius.core.role.RoleProfessional;
 import br.com.barcadero.genius.persistence.model.Professional;
-import br.com.barcadero.genius.rest.util.RestUtil;
+import br.com.barcadero.genius.persistence.objects.Filter;
+import br.com.barcadero.genius.persistence.response.ProfessionalResponse;
+import br.com.idoctor.commons.exception.ValidationException;
+import br.com.idoctor.commons.rest.util.RestUtil;
+//import br.com.barcadero.genius.rest.util.RestUtil;
 
 
 
@@ -111,6 +117,25 @@ public class RESTProfessional extends ASuperRestClass<Professional>{
 			return RestUtil.getResponseErroInesperado(e);
 		}
 		return Response.ok().build();
+	}
+	
+	
+	@GET
+	@Path("filter")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response doGetByFilter(Filter filter){
+		List<ProfessionalResponse> professionals=null;
+		try {
+			professionals= roleProfessional.listProResponseByFilter(filter);
+//		} catch (ValidationException e) {
+//			return RestUtil.getResponseValidationErro(e);
+		} catch (Exception e) {
+			return RestUtil.getResponseErroInesperado(e);
+		}
+			
+		//return Response.ok().entity(professionals).build();
+		return RestUtil.responseOK(professionals);
 	}
 	
 
