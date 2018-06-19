@@ -94,7 +94,7 @@
 				<version>2.3</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warName>transferr-rest</warName>
+					<warName>genius-rest</warName>
 				</configuration>
 			</plugin>
 		</plugins>
